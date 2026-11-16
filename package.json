@@ -1,0 +1,23 @@
+{
+  "name": "immortal-campus",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k -n \"backend,frontend\" -c \"yellow,blue\" \"npm --prefix backend run dev\" \"npm --prefix frontend/web run dev\"",
+    "dev:frontend": "npm --prefix frontend/web run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "backend": "npm --prefix backend run dev",
+    "start:backend": "node backend/src/server.js",
+    "test:backend": "npm --prefix backend test",
+    "build": "npm --prefix frontend/web run build",
+    "preview": "npm --prefix frontend/web run preview",
+    "check": "npm --prefix frontend/web run check"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.118.0"
+  }
+}

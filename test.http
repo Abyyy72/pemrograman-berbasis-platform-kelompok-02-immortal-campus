@@ -1,0 +1,250 @@
+### ===================================================================
+### IMMORTAL CAMPUS — REST API TEST COLLECTION (PRD ALIGNMENT)
+### ===================================================================
+### Base URL Server Backend
+@baseUrl = http://localhost:3000/api/v1
+
+### Variabel Token Aktif (Default terverifikasi langsung untuk pengujian instan)
+@penulisToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXItMDAxIiwicm9sZSI6InBlbnVsaXMiLCJlbWFpbCI6ImFtYW5kYUBjYW1wdXMuYWMuaWQiLCJuYW1hIjoiQW1hbmRhIFB1dHJpIFdpYm93byIsImlhdCI6MTc5NDgzNjk5NiwiZXhwIjoxNzk1NDQxNzk2fQ.-crQ-LULgUxdmrmTeglYpyDQ9XgpcRsHcfZGXpNy7nA
+@kuratorToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXItMDAyIiwicm9sZSI6Imt1cmF0b3IiLCJlbWFpbCI6InJpbmEuc3VyeWFuaUBjYW1wdXMuYWMuaWQiLCJuYW1hIjoiRHIuIFJpbmEgU3VyeWFuaSwgTS5Lb20uIiwiaWF0IjoxNzk0ODM3MDA1LCJleHAiOjE3OTU0NDE4MDV9.q5IRX6zlPyN-J5aVTtpzX4-_wGsiQbMhVSbGz3j9rVo
+@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXItYWRtaW4tMDAxIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBjYW1wdXMuYWMuaWQiLCJuYW1hIjoiQWRtaW5pc3RyYXRvciBVdGFtYSBQZXJwdXN0YWthYW4iLCJpYXQiOjE3OTQ4Mzk0OTksImV4cCI6MTc5NTQ0NDI5OX0.uT7pfmFcUrkJpK9sXZSDjzUW2J_d5hMiU59jPmKBOPk
+
+
+### ===================================================================
+### 1. HEALTH CHECK & KATALOG API
+### ===================================================================
+
+### 1.1 Cek Status Server & Daftar Endpoint (PRD Alignment)
+GET {{baseUrl}}/
+Content-Type: application/json
+
+
+### ===================================================================
+### 2. AUTENTIKASI & AKUN (FR-01, FR-02)
+### ===================================================================
+
+### 2.1 Login Penulis (Mahasiswa) — Menggunakan Email & Password
+# @name loginPenulis
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "amanda@campus.ac.id",
+  "password": "password123",
+  "role": "penulis"
+}
+
+### 2.2 Login Kurator Perpustakaan — Menggunakan NIP / Email & Password
+# @name loginKurator
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "identifier": "rina.suryani@campus.ac.id",
+  "password": "password123",
+  "role": "kurator"
+}
+
+### 2.3 Cek Profil Pengguna yang Sedang Login (/auth/me)
+GET {{baseUrl}}/auth/me
+Authorization: Bearer {{penulisToken}}
+
+### 2.4 Registrasi Akun Baru (Input Kredensial Sendiri)
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "nama": "Budi Pratama",
+  "email": "budi.pratama@campus.ac.id",
+  "nim": "2210512999",
+  "password": "password123",
+  "prodi": "Teknik Informatika",
+  "role": "penulis"
+}
+
+### 2.5 Keluar Akun (Logout)
+POST {{baseUrl}}/auth/logout
+Content-Type: application/json
+
+
+### ===================================================================
+### 3. PENCARIAN & PENJELAJAHAN PUBLIK (FR-30, FR-31, FR-34)
+### ===================================================================
+
+### 3.1 Beranda — Karya Terbaru & Terpopuler (FR-34)
+GET {{baseUrl}}/karya/beranda?limit=6
+
+### 3.2 Jelajah Karya Terbit — Semua Karya Diterbitkan (FR-30)
+GET {{baseUrl}}/karya
+
+### 3.3 Pencarian Berdasarkan Kata Kunci (FR-30)
+GET {{baseUrl}}/karya?q=learning
+
+### 3.4 Filter Berdasarkan Jenis Karya, Prodi, dan Tahun (FR-31)
+GET {{baseUrl}}/karya?jenis=skripsi&prodi=ti&tahun=2026
+
+### 3.5 Pengurutan Terpopuler / Unduhan Terbanyak (FR-31)
+GET {{baseUrl}}/karya?sort=terpopuler
+
+### 3.6 Detail Lengkap Satu Karya Ilmiah (FR-32, FR-41)
+GET {{baseUrl}}/karya/2024-819
+
+
+### ===================================================================
+### 4. PENGAJUAN & PENGELOLAAN NASKAH PENULIS (FR-10, FR-14, FR-15)
+### ===================================================================
+
+### 4.1 Karya Saya — Daftar Naskah Milik Penulis yang Sedang Login (FR-15)
+GET {{baseUrl}}/karya/saya
+Authorization: Bearer {{penulisToken}}
+
+### 4.2 Simpan Naskah Baru sebagai DRAFT (FR-10)
+# @name buatDraft
+POST {{baseUrl}}/karya
+Authorization: Bearer {{penulisToken}}
+Content-Type: application/json
+
+{
+  "judul": "Analisis Performa Model Arsitektur Microservices Menggunakan Go dan gRPC",
+  "pembimbing": "Dr. Eng. Hendra Sucipto, S.Kom., M.T.",
+  "jenis": "skripsi",
+  "prodi": "Teknik Informatika",
+  "tahun": 2026,
+  "abstrak": "Penelitian ini mengevaluasi throughput latensi rendah komunikasi RPC antar-service dibandingkan REST API tradisional.",
+  "kataKunci": ["Microservices", "gRPC", "Go", "Cloud Native"],
+  "status": "Draft"
+}
+
+### 4.3 Ajukan Naskah Baru Langsung ke Antrean Kurator (FR-14)
+# @name ajukanNaskah
+POST {{baseUrl}}/karya
+Authorization: Bearer {{penulisToken}}
+Content-Type: application/json
+
+{
+  "judul": "Pengembangan Sistem Klasifikasi Dokumen Karya Ilmiah Otomatis dengan NLP",
+  "pembimbing": "Dr. Eng. Hendra Sucipto, S.Kom., M.T.",
+  "jenis": "skripsi",
+  "prodi": "Teknik Informatika",
+  "tahun": 2026,
+  "abstrak": "Sistem klasifikasi teks abstrak karya ilmiah menggunakan metode Transformer IndoBERT untuk pemetaan bidang kajian otomatis repositori kampus.",
+  "kataKunci": ["NLP", "IndoBERT", "Klasifikasi Teks", "Repositori Kampus"],
+  "status": "Diajukan"
+}
+
+### 4.4 Perbarui Draft / Ajukan Ulang Revisi Naskah
+PUT {{baseUrl}}/karya/karya-revisi-001
+Authorization: Bearer {{penulisToken}}
+Content-Type: application/json
+
+{
+  "abstrak": "Riset evaluasi kegunaan antarmuka mobile kesehatan mental dengan System Usability Scale (SUS) skor 85 setelah perbaikan dewan penguji.",
+  "submitForReview": true
+}
+
+
+### ===================================================================
+### 5. ALUR REVIEW & KURASI PERPUSTAKAAN (FR-20, FR-23)
+### ===================================================================
+
+### 5.1 Antrean Kurator — Naskah Status Diajukan & Dalam Review (FR-20)
+GET {{baseUrl}}/karya/antrean
+Authorization: Bearer {{kuratorToken}}
+
+### 5.2 Mulai Review Naskah (Ubah Status ke 'Dalam Review')
+PATCH {{baseUrl}}/karya/karya-review-001/start-review
+Authorization: Bearer {{kuratorToken}}
+
+### 5.3 Keputusan Kurator: MINTA REVISI (dengan Catatan Wajib) (FR-23)
+POST {{baseUrl}}/karya/karya-review-001/review
+Authorization: Bearer {{kuratorToken}}
+Content-Type: application/json
+
+{
+  "tindakan": "revisi",
+  "catatan": "Mohon perbaiki format penulisan daftar pustaka sesuai standar IEEE dan lampirkan lembar pengesahan pembimbing."
+}
+
+### 5.4 Keputusan Kurator: TERBITKAN NASKAH (Auto Generate DOI & Tanggal Terbit) (FR-23)
+POST {{baseUrl}}/karya/karya-review-001/review
+Authorization: Bearer {{kuratorToken}}
+Content-Type: application/json
+
+{
+  "tindakan": "terbitkan",
+  "catatan": "Naskah telah memenuhi semua standar mutu dan layak dipublikasikan ke repositori publik."
+}
+
+### 5.5 Keputusan Kurator: TOLAK NASKAH
+POST {{baseUrl}}/karya/karya-review-001/review
+Authorization: Bearer {{kuratorToken}}
+Content-Type: application/json
+
+{
+  "tindakan": "tolak",
+  "catatan": "Topik naskah tidak sesuai dengan bidang keilmuan program studi."
+}
+
+
+### ===================================================================
+### 6. UNDUHAN & STATISTIK REPOSITORI (FR-40, FR-41, FR-42)
+### ===================================================================
+
+### 6.1 Catat Unduhan Naskah (FR-40, FR-41)
+POST {{baseUrl}}/karya/2024-819/unduh
+
+### 6.2 Unduh Berkas Naskah & Auto-Increment Metrik Unduhan
+GET {{baseUrl}}/karya/2024-819/unduh
+
+### 6.3 Ringkasan Statistik Repositori & Dashboard Kurator (FR-42)
+GET {{baseUrl}}/statistik
+
+### 6.4 Borang Akreditasi Program Studi (Kriteria 9 BAN-PT)
+GET {{baseUrl}}/statistik/akreditasi
+
+
+### ===================================================================
+### 7. REPOSITORI KESELURUHAN (INTERNAL & ARSIP)
+### ===================================================================
+
+### 7.1 Seluruh Naskah Lintas Status
+GET {{baseUrl}}/karya/semua
+
+
+### ===================================================================
+### 8. ADMINISTRATOR SISTEM (MANAJEMEN PENGGUNA & OVERRIDE)
+### ===================================================================
+
+### 8.1 Login Admin Sistem
+# @name loginAdmin
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "identifier": "admin@campus.ac.id",
+  "password": "password123"
+}
+
+### 8.2 Ambil Seluruh Daftar Pengguna (Admin Only)
+GET {{baseUrl}}/admin/users
+Authorization: Bearer {{adminToken}}
+
+### 8.3 Tambah Akun Kurator Baru oleh Admin
+POST {{baseUrl}}/admin/users
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "nama": "Siti Nurhaliza, M.IP.",
+  "email": "siti.nurhaliza@campus.ac.id",
+  "nip": "199408222021042005",
+  "prodi": "UPT Perpustakaan",
+  "role": "kurator",
+  "password": "password123"
+}
+
+### 8.4 Statistik Sistem & Audit Log Admin
+GET {{baseUrl}}/admin/statistik
+Authorization: Bearer {{adminToken}}
+
+

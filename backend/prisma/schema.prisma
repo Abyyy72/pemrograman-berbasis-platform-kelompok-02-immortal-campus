@@ -1,0 +1,118 @@
+// Prisma Schema untuk Immortal Campus
+// Terhubung dengan Supabase (PostgreSQL) sesuai PRD Seksi 14
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum RolePengguna {
+  penulis
+  kurator
+}
+
+enum JenisKarya {
+  skripsi
+  tesis
+  jurnal
+  kp
+  penelitian
+}
+
+enum StatusKarya {
+  Draft
+  Diajukan
+  Dalam_Review
+  Perlu_Revisi
+  Diterbitkan
+  Ditolak
+}
+
+model User {
+  id           String       @id @default(cuid())
+  email        String       @unique
+  passwordHash String       @map("password_hash")
+  nama         String
+  nim          String?      @unique
+  nip          String?      @unique
+  prodi        String       @default("Teknik Informatika")
+  role         RolePengguna @default(penulis)
+  createdAt    DateTime     @default(now()) @map("created_at")
+  updatedAt    DateTime     @updatedAt @map("updated_at")
+
+  karya        Karya[]
+  reviewLogs   ReviewLog[]
+
+  @@map("users")
+}
+
+model Karya {
+  id               String       @id @default(cuid())
+  judul            String
+  penulis          String
+  nim              String?
+  pembimbing       String
+  jenis            JenisKarya   @default(skripsi)
+  jenisLabel       String       @map("jenis_label")
+  prodi            String       @default("Teknik Informatika")
+  prodiKey         String       @default("ti") @map("prodi_key")
+  tahun            Int          @default(2026)
+  abstrak          String       @db.Text
+  kataKunci        String[]     @map("kata_kunci")
+  unduhan          Int          @default(0)
+  sitasi           Int          @default(0)
+  status           StatusKarya  @default(Diajukan)
+  tanggalTerbit    String?      @map("tanggal_terbit")
+  doi              String?
+  fileUrl          String?      @map("file_url")
+  filePath         String?      @map("file_path")
+  fileOriginalName String?      @map("file_original_name")
+  fileSize         String?      @map("file_size")
+  catatanKurator   String?      @db.Text @map("catatan_kurator")
+
+  penulisId        String?      @map("penulis_id")
+  user             User?        @relation(fields: [penulisId], references: [id], onDelete: SetNull)
+
+  createdAt        DateTime     @default(now()) @map("created_at")
+  updatedAt        DateTime     @updatedAt @map("updated_at")
+
+  reviews          ReviewLog[]
+  downloads        DownloadLog[]
+
+  @@index([status])
+  @@index([prodiKey])
+  @@index([tahun])
+  @@index([jenis])
+  @@map("karya")
+}
+
+model ReviewLog {
+  id        String   @id @default(cuid())
+  karyaId   String   @map("karya_id")
+  karya     Karya    @relation(fields: [karyaId], references: [id], onDelete: Cascade)
+  kuratorId String   @map("kurator_id")
+  kurator   User     @relation(fields: [kuratorId], references: [id], onDelete: Cascade)
+  tindakan  String
+  catatan   String?  @db.Text
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([karyaId])
+  @@map("review_logs")
+}
+
+model DownloadLog {
+  id        String   @id @default(cuid())
+  karyaId   String   @map("karya_id")
+  karya     Karya    @relation(fields: [karyaId], references: [id], onDelete: Cascade)
+  ipAddress String?  @map("ip_address")
+  userAgent String?  @map("user_agent")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([karyaId])
+  @@map("download_logs")
+}
+
