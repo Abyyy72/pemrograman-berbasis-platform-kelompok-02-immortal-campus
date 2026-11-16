@@ -89,24 +89,48 @@
 </script>
 
 <!-- 2. HERO SECTION FROM STITCH -->
-<section id="beranda" class="relative overflow-hidden px-4 sm:px-6 lg:px-12 pt-8 sm:pt-12 pb-16 sm:pb-24 max-w-7xl mx-auto w-full">
-  <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[720px] max-w-full h-[340px] bg-primary/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
-  <div class="absolute top-48 right-10 w-96 max-w-full h-96 bg-secondary-container/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<section
+  id="beranda"
+  class="relative overflow-hidden px-4 sm:px-6 lg:px-12 pt-8 sm:pt-12 pb-16 sm:pb-24 max-w-7xl mx-auto w-full"
+>
+  <div
+    class="absolute top-10 left-1/2 -translate-x-1/2 w-[720px] max-w-full h-[340px] bg-primary/5 rounded-full blur-3xl pointer-events-none -z-10"
+  ></div>
+  <div
+    class="absolute top-48 right-10 w-96 max-w-full h-96 bg-secondary-container/10 rounded-full blur-3xl pointer-events-none -z-10"
+  ></div>
 
-  <div class="flex flex-col items-center text-center max-w-4xl mx-auto space-y-4 sm:space-y-6">
-    <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-surface-card shadow-sm hover:shadow transition-shadow max-w-full">
-      <span class="flex h-2 w-2 rounded-full bg-status-published animate-pulse shrink-0"></span>
-      <span class="font-label-badge text-xs sm:text-label-badge text-primary tracking-wide text-center leading-tight">
+  <div
+    class="flex flex-col items-center text-center max-w-4xl mx-auto space-y-4 sm:space-y-6"
+  >
+    <div
+      class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-surface-card shadow-sm hover:shadow transition-shadow max-w-full"
+    >
+      <span
+        class="flex h-2 w-2 rounded-full bg-status-published animate-pulse shrink-0"
+      ></span>
+      <span
+        class="font-label-badge text-xs sm:text-label-badge text-primary tracking-wide text-center leading-tight"
+      >
         Repositori Resmi Karya Ilmiah Kampus • Terkurasi &amp; Terbuka
       </span>
     </div>
 
-    <h1 class="font-display-hero text-display-hero-mobile sm:text-display-hero text-text-primary tracking-tight max-w-3xl">
-      Abadikan Karya Ilmiah, <span class="text-primary underline decoration-primary/20 decoration-wavy decoration-2">Buka Gerbang</span> Pengetahuan Kampus.
+    <h1
+      class="font-display-hero text-display-hero-mobile sm:text-display-hero text-text-primary tracking-tight max-w-3xl"
+    >
+      Abadikan Karya Ilmiah, <span
+        class="text-primary underline decoration-primary/20 decoration-wavy decoration-2"
+        >Buka Gerbang</span
+      > Pengetahuan Kampus.
     </h1>
 
-    <p class="font-body-md sm:font-body-lg text-sm sm:text-body-lg text-text-secondary max-w-2xl leading-relaxed">
-      Satu wadah resmi untuk menyimpan, mengkurasi, dan mempublikasikan skripsi, tesis, jurnal, serta laporan riset sivitas akademika. Akses ribuan referensi tervalidasi bebas hambatan.
+    <p
+      class="font-body-md sm:font-body-lg text-sm sm:text-body-lg text-text-secondary max-w-2xl leading-relaxed"
+    >
+      Satu wadah resmi untuk menyimpan, mengkurasi, dan mempublikasikan skripsi,
+      tesis, jurnal, serta laporan riset sivitas akademika. Akses ribuan
+      referensi tervalidasi bebas hambatan.
     </p>
 
     <!-- Search Box Card -->
@@ -218,13 +242,22 @@
 
   <!-- Featured Mockup Box from Stitch -->
   <div class="mt-12 sm:mt-16 max-w-5xl mx-auto relative">
-    <div class="bg-surface-card rounded-3xl p-5 sm:p-8 shadow-xl relative z-10 border border-border-subtle/70 overflow-hidden">
-      <div class="flex items-center justify-between pb-4 sm:pb-6 mb-6 border-b border-border-subtle/80 flex-wrap gap-2">
+    <div
+      class="bg-surface-card rounded-3xl p-5 sm:p-8 shadow-xl relative z-10 border border-border-subtle/70 overflow-hidden"
+    >
+      <div
+        class="flex items-center justify-between pb-4 sm:pb-6 mb-6 border-b border-border-subtle/80 flex-wrap gap-2"
+      >
         <div class="flex items-center gap-2 min-w-0">
           <div class="w-3 h-3 rounded-full bg-error/70 shrink-0"></div>
           <div class="w-3 h-3 rounded-full bg-status-review/80 shrink-0"></div>
-          <div class="w-3 h-3 rounded-full bg-status-published/80 shrink-0"></div>
-          <span class="ml-2 sm:ml-4 font-label-mono-sm text-label-mono-sm text-text-tertiary truncate max-w-[170px] sm:max-w-none">portal.immortal-campus.ac.id/etalase/karya/{featuredKaryaObj.id}</span>
+          <div
+            class="w-3 h-3 rounded-full bg-status-published/80 shrink-0"
+          ></div>
+          <span
+            class="ml-2 sm:ml-4 font-label-mono-sm text-label-mono-sm text-text-tertiary truncate max-w-[170px] sm:max-w-none"
+            >portal.immortal-campus.ac.id/etalase/karya/{featuredKaryaObj.id}</span
+          >
         </div>
         <div class="flex items-center gap-2 sm:gap-3 shrink-0">
           <span
@@ -233,7 +266,10 @@
             <span class="material-symbols-outlined text-xs">verified</span> Terverifikasi
             Kurator
           </span>
-          <span class="font-label-mono-sm text-label-mono-sm text-text-tertiary hidden sm:inline">DOI: {featuredKaryaObj.doi || '10.2412/imc.2026.001'}</span>
+          <span
+            class="font-label-mono-sm text-label-mono-sm text-text-tertiary hidden sm:inline"
+            >DOI: {featuredKaryaObj.doi || "10.2412/imc.2026.001"}</span
+          >
         </div>
       </div>
 
@@ -329,8 +365,14 @@
                   .toUpperCase()}
               </div>
               <div class="min-w-0">
-                <h4 class="font-headline-sm text-headline-sm text-text-primary font-bold truncate">{featuredKaryaObj.penulis}</h4>
-                <p class="font-body-sm text-body-sm text-text-secondary truncate">
+                <h4
+                  class="font-headline-sm text-headline-sm text-text-primary font-bold truncate"
+                >
+                  {featuredKaryaObj.penulis}
+                </h4>
+                <p
+                  class="font-body-sm text-body-sm text-text-secondary truncate"
+                >
                   {#if featuredKaryaObj.nim}NIM: {featuredKaryaObj.nim} •
                   {/if}
                   Pembimbing: {featuredKaryaObj.pembimbing}
@@ -378,7 +420,9 @@
               </div>
             </div>
 
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto shrink-0">
+            <div
+              class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto shrink-0"
+            >
               <button
                 type="button"
                 onclick={() => onOpenDetail(featuredKaryaObj)}

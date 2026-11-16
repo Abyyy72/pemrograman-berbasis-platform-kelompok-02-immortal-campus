@@ -292,7 +292,10 @@
 </script>
 
 <!-- 5. [INTEGRASI SCREEN_2] RINGKASAN METRIK & TREN UNDUHAN PUBLIK -->
-<section class="w-full py-12 sm:py-20 px-4 sm:px-6 lg:px-12 bg-surface-canvas border-y border-border-subtle" id="statistik-direktori">
+<section
+  class="w-full py-12 sm:py-20 px-4 sm:px-6 lg:px-12 bg-surface-canvas border-y border-border-subtle"
+  id="statistik-direktori"
+>
   <div class="max-w-7xl mx-auto space-y-8 sm:space-y-10">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
       <div class="space-y-3">
@@ -313,10 +316,14 @@
             Statistik Repositori &amp; Kesiapan Akreditasi
           </span>
         </div>
-        <h2 class="font-headline-xl text-headline-xl-mobile sm:text-headline-xl text-text-primary tracking-tight">
+        <h2
+          class="font-headline-xl text-headline-xl-mobile sm:text-headline-xl text-text-primary tracking-tight"
+        >
           Indikator Kinerja Repositori &amp; Dampak Ilmiah
         </h2>
-        <p class="font-body-md text-sm sm:text-body-md text-text-secondary max-w-2xl">
+        <p
+          class="font-body-md text-sm sm:text-body-md text-text-secondary max-w-2xl"
+        >
           Pantauan real-time sirkulasi karya ilmiah sivitas akademika,
           pertumbuhan koleksi terbuka, dan pemenuhan standar akreditasi
           institusi nasional.
@@ -537,10 +544,16 @@
         </div>
 
         <!-- Bar Chart Tren Dinamis dari data Supabase -->
-        <div class="h-56 w-full flex items-end justify-between gap-1 sm:gap-2 pt-6 pb-2 border-b border-border-subtle overflow-x-auto min-w-0">
+        <div
+          class="h-56 w-full flex items-end justify-between gap-1 sm:gap-2 pt-6 pb-2 border-b border-border-subtle overflow-x-auto min-w-0"
+        >
           {#each trenBatangData as bar}
-            <div class="flex-1 min-w-[18px] flex flex-col items-center gap-2 h-full justify-end group">
-              <div class="w-full flex items-end justify-center gap-0.5 sm:gap-1 h-full">
+            <div
+              class="flex-1 min-w-[18px] flex flex-col items-center gap-2 h-full justify-end group"
+            >
+              <div
+                class="w-full flex items-end justify-center gap-0.5 sm:gap-1 h-full"
+              >
                 <div
                   style="height: {bar.u}%"
                   class="w-2 sm:w-3 bg-primary/80 rounded-t-sm group-hover:bg-primary transition-all {bar.peak
@@ -552,7 +565,11 @@
                   class="w-2 sm:w-3 bg-secondary-container rounded-t-sm"
                 ></div>
               </div>
-              <span class="font-label-mono-sm text-[9px] sm:text-[10px] {bar.peak ? 'text-primary font-bold' : 'text-text-tertiary'}">{bar.m}</span>
+              <span
+                class="font-label-mono-sm text-[9px] sm:text-[10px] {bar.peak
+                  ? 'text-primary font-bold'
+                  : 'text-text-tertiary'}">{bar.m}</span
+              >
             </div>
           {/each}
         </div>
@@ -695,9 +712,14 @@
 </section>
 
 <!-- 6. [INTEGRASI SCREEN_2] DIREKTORI FAKULTAS & PROGRAM STUDI TERINTEGRASI -->
-<section class="w-full py-12 sm:py-20 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto" id="fakultas-direktori">
+<section
+  class="w-full py-12 sm:py-20 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto"
+  id="fakultas-direktori"
+>
   <div class="space-y-8 sm:space-y-10">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6">
+    <div
+      class="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6"
+    >
       <div class="space-y-3">
         <div
           class="inline-flex items-center gap-2 font-label-badge text-label-badge text-primary font-semibold"
@@ -705,10 +727,14 @@
           <span class="material-symbols-outlined text-base">domain</span>
           <span>Direktori Akademik Terpadu</span>
         </div>
-        <h2 class="font-headline-xl text-headline-xl-mobile sm:text-headline-xl text-text-primary tracking-tight">
+        <h2
+          class="font-headline-xl text-headline-xl-mobile sm:text-headline-xl text-text-primary tracking-tight"
+        >
           Fakultas &amp; Program Studi Terintegrasi
         </h2>
-        <p class="font-body-md text-sm sm:text-body-md text-text-secondary max-w-xl">
+        <p
+          class="font-body-md text-sm sm:text-body-md text-text-secondary max-w-xl"
+        >
           Jelajahi karya ilmiah berdasarkan unit akademik. Seluruh 6 fakultas
           dan 32 program studi telah terhubung langsung ke repositori digital.
         </p>
@@ -849,7 +875,9 @@
 </section>
 
 <!-- 7. [INTEGRASI SCREEN_2] LEADERBOARD KARYA PALING BANYAK DIUNDUH -->
-<section class="w-full py-12 sm:py-20 px-4 sm:px-6 lg:px-12 bg-surface-container-low border-t border-border-subtle">
+<section
+  class="w-full py-12 sm:py-20 px-4 sm:px-6 lg:px-12 bg-surface-container-low border-t border-border-subtle"
+>
   <div class="max-w-7xl mx-auto space-y-6 sm:space-y-8">
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
       <div class="space-y-2">
@@ -859,7 +887,9 @@
           <span class="material-symbols-outlined text-base">leaderboard</span>
           <span>Leaderboard Pengaruh Riset</span>
         </div>
-        <h2 class="font-headline-xl text-headline-xl-mobile sm:text-headline-xl text-text-primary tracking-tight">
+        <h2
+          class="font-headline-xl text-headline-xl-mobile sm:text-headline-xl text-text-primary tracking-tight"
+        >
           Top 5 Karya Ilmiah Paling Banyak Diunduh
         </h2>
         <p class="font-body-sm text-body-sm text-text-secondary">
@@ -893,29 +923,47 @@
             class="py-4 first:pt-2 last:pb-2 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 group"
           >
             <div class="flex items-start gap-3 sm:gap-4 min-w-0 w-full">
-              <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl flex items-center justify-center font-extrabold text-base sm:text-lg shrink-0 shadow-sm {item.rankColor}">
+              <span
+                class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl flex items-center justify-center font-extrabold text-base sm:text-lg shrink-0 shadow-sm {item.rankColor}"
+              >
                 #{item.rank}
               </span>
               <div class="space-y-1 min-w-0 flex-1">
-                <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs">
-                  <span class="px-2 py-0.5 rounded font-label-badge font-semibold {item.badgeColor}">{item.badge}</span>
-                  <span class="text-text-tertiary font-label-mono-sm truncate max-w-[140px] sm:max-w-none">{item.doi}</span>
-                  <span class="text-text-tertiary hidden sm:inline">• Tahun {item.year}</span>
+                <div
+                  class="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs"
+                >
+                  <span
+                    class="px-2 py-0.5 rounded font-label-badge font-semibold {item.badgeColor}"
+                    >{item.badge}</span
+                  >
+                  <span
+                    class="text-text-tertiary font-label-mono-sm truncate max-w-[140px] sm:max-w-none"
+                    >{item.doi}</span
+                  >
+                  <span class="text-text-tertiary hidden sm:inline"
+                    >• Tahun {item.year}</span
+                  >
                 </div>
-                <h4 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-primary transition-colors cursor-pointer font-bold leading-snug">
+                <h4
+                  class="font-headline-sm text-headline-sm text-text-primary group-hover:text-primary transition-colors cursor-pointer font-bold leading-snug"
+                >
                   {item.title}
                 </h4>
                 <p class="text-xs text-text-secondary">
                   Oleh <strong class="text-text-primary">{item.author}</strong>
                   ({item.prodi})
                   {#if item.advisor}
-                    <span class="hidden sm:inline">• Pembimbing: {item.advisor}</span>
+                    <span class="hidden sm:inline"
+                      >• Pembimbing: {item.advisor}</span
+                    >
                   {/if}
                 </p>
               </div>
             </div>
 
-            <div class="flex items-center gap-3 sm:gap-4 self-end md:self-center shrink-0">
+            <div
+              class="flex items-center gap-3 sm:gap-4 self-end md:self-center shrink-0"
+            >
               <div class="text-right">
                 <span
                   class="font-headline-sm font-extrabold text-primary text-base sm:text-lg block"
