@@ -92,26 +92,8 @@ CREATE INDEX IF NOT EXISTS idx_karya_unduhan ON public.karya(unduhan DESC);
 
 
 -- ====================================================================
--- DATA AWAL RINGKAS (2 AKUN PENGGUNA & 2 KARYA SAMPEL)
--- Kata sandi kedua akun: password123
+-- DATA AWAL / SEED DATA
+-- File seed terpisah ada di: backend/prisma/seed.sql (di-gitignore)
+-- Jalankan seed.sql secara lokal untuk isi data demo awal
 -- ====================================================================
-
--- A. Data Akun Penulis & Kurator
-INSERT INTO public.users (id, nama, email, password_hash, nim, nip, prodi, role)
-VALUES 
-  -- Akun Penulis (Mahasiswa)
-  ('user-001', 'Amanda Putri Wibowo', 'amanda@campus.ac.id', '$2a$10$c2KZK2Obi02jLO3waJeBKuXahTJ8mDNiuyuPLHMluO5AwqJ.He8Lm', '2110512034', null, 'Teknik Informatika', 'penulis'),
-  
-  -- Akun Kurator (Perpustakaan)
-  ('user-002', 'Dr. Rina Suryani, M.Kom.', 'rina.suryani@campus.ac.id', '$2a$10$c2KZK2Obi02jLO3waJeBKuXahTJ8mDNiuyuPLHMluO5AwqJ.He8Lm', null, '198204152008122001', 'UPT Perpustakaan', 'kurator')
-ON CONFLICT (id) DO NOTHING;
-
--- B. Sampel Karya Ilmiah (1 Terbit untuk publik, 1 Diajukan untuk antrean kurator)
-INSERT INTO public.karya (id, judul, penulis, nim, pembimbing, jenis, jenis_label, prodi, prodi_key, tahun, abstrak, kata_kunci, unduhan, sitasi, status, tanggal_terbit, doi, file_size, penulis_id)
-VALUES
-  -- 1. Karya Terbit (Tampil di Beranda & Pencarian Publik)
-  ('karya-001', 'Penerapan Deep Learning CNN untuk Deteksi Dini Penyakit Padi Berbasis Mobile', 'Amanda Putri Wibowo', '2110512034', 'Dr. Eng. Hendra Sucipto, S.Kom., M.T.', 'skripsi', 'Skripsi S-1', 'Teknik Informatika', 'ti', 2024, 'Rancang bangun MobileNetV3 terkompresi INT8 quantization untuk deteksi penyakit daun padi tropis dengan akurasi 96,8%.', ARRAY['Teknik Informatika', 'Computer Vision', 'Deep Learning'], 1420, 18, 'Diterbitkan', '14 Juli 2024', '10.2412/imc.2024.089', '6.4 MB', 'user-001'),
-  
-  -- 2. Karya Masuk Antrean Kurasi (Untuk Uji Coba Review Kurator)
-  ('karya-002', 'Implementasi Edge AI pada Raspberry Pi untuk Pengawasan Lab Kampus', 'Amanda Putri Wibowo', '2110512034', 'Dr. Eng. Hendra Sucipto, S.Kom., M.T.', 'skripsi', 'Skripsi S-1', 'Teknik Informatika', 'ti', 2026, 'Sistem pengawasan laboratorium pintar dan deteksi anomali kehadiran menggunakan arsitektur YOLOv8 secara real-time.', ARRAY['Edge AI', 'Raspberry Pi', 'YOLOv8'], 0, 0, 'Diajukan', '28 Oktober 2026', null, '5.1 MB', 'user-001')
-ON CONFLICT (id) DO NOTHING;
+-- (seed data tidak disertakan di sini demi keamanan — lihat seed.sql)

@@ -37,6 +37,9 @@ yarn-error.log*
 .vscode/
 .idea/
 
+# Database seed data (berisi hash password & data sensitif demo)
+backend/prisma/seed.sql
+
 # Flutter / Android sensitive
 android/local.properties
 android/key.properties
