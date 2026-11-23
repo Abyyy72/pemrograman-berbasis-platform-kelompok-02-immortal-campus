@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'primary-fixed': '#dae1ff', 'tertiary': '#4b41d2', 'outline': '#727687', 'inverse-surface': '#213145', 'surface-tint': '#0054d6', 'on-primary-fixed-variant': '#003fa4', 'status-published': '#10B981', 'surface-muted': '#F1F5F9', 'on-surface': '#0b1c30', 'on-tertiary-fixed': '#100069', 'outline-variant': '#c2c6d8', 'on-primary': '#ffffff', 'inverse-on-surface': '#eaf1ff', 'text-secondary': '#475569', 'secondary': '#006688', 'tertiary-container': '#655dec', 'primary': '#0050cb', 'inverse-primary': '#b3c5ff', 'error-container': '#ffdad6', 'on-tertiary': '#ffffff', 'on-secondary-fixed': '#001e2b', 'status-revision': '#F97316', 'surface-canvas': '#F8FAFC', 'surface-container-lowest': '#ffffff', 'secondary-fixed-dim': '#75d1ff', 'text-primary': '#0F172A', 'surface': '#f8f9ff', 'surface-card': '#FFFFFF', 'error': '#ba1a1a', 'on-background': '#0b1c30', 'on-primary-container': '#f8f7ff', 'secondary-fixed': '#c2e8ff', 'on-tertiary-container': '#faf6ff', 'primary-container': '#0066ff', 'surface-variant': '#d3e4fe', 'status-review': '#EAB308', 'accent-glow': 'rgba(0, 102, 255, 0.12)', 'surface-container-low': '#eff4ff', 'surface-container-highest': '#d3e4fe', 'surface-container-high': '#dce9ff', 'text-tertiary': '#94A3B8', 'on-secondary-container': '#004b65', 'status-draft': '#64748B', 'on-secondary-fixed-variant': '#004d67', 'status-submitted': '#0284C7', 'secondary-container': '#00c1fd', 'surface-bright': '#f8f9ff', 'on-tertiary-fixed-variant': '#372abf', 'on-secondary': '#ffffff', 'on-surface-variant': '#424656', 'background': '#f8f9ff', 'surface-container': '#e5eeff', 'border-subtle': '#E2E8F0', 'primary-fixed-dim': '#b3c5ff', 'on-error-container': '#93000a', 'tertiary-fixed-dim': '#c3c0ff', 'status-rejected': '#EF4444', 'on-error': '#ffffff', 'on-primary-fixed': '#001849', 'surface-dim': '#cbdbf5', 'tertiary-fixed': '#e3dfff' }, borderRadius: { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, spacing: { 'space-xl': '2.5rem', 'space-md': '1rem', 'margin-mobile': '1rem', 'space-sm': '0.5rem', 'margin': '2rem', 'gutter': '1.5rem', 'space-lg': '1.5rem', 'space-xs': '0.25rem', 'gutter-mobile': '1rem' }, fontFamily: { 'display-hero-mobile': ['Plus Jakarta Sans'], 'body-lg': ['Plus Jakarta Sans'], 'headline-md': ['Plus Jakarta Sans'], 'headline-xl-mobile': ['Plus Jakarta Sans'], 'headline-lg': ['Plus Jakarta Sans'], 'headline-sm': ['Plus Jakarta Sans'], 'display-hero': ['Plus Jakarta Sans'], 'label-caption': ['Plus Jakarta Sans'], 'label-badge': ['Plus Jakarta Sans'], 'headline-xl': ['Plus Jakarta Sans'], 'body-md': ['Plus Jakarta Sans'], 'body-sm': ['Plus Jakarta Sans'], 'label-mono-sm': ['JetBrains Mono'] }, fontSize: { 'display-hero-mobile': ['36px', { lineHeight: '44px', letterSpacing: '-0.02em', fontWeight: '800' }], 'body-lg': ['18px', { lineHeight: '28px', fontWeight: '400' }], 'headline-md': ['20px', { lineHeight: '28px', letterSpacing: '-0.01em', fontWeight: '600' }], 'headline-xl-mobile': ['26px', { lineHeight: '34px', letterSpacing: '-0.02em', fontWeight: '700' }], 'headline-lg': ['24px', { lineHeight: '32px', letterSpacing: '-0.015em', fontWeight: '700' }], 'headline-sm': ['16px', { lineHeight: '24px', letterSpacing: '-0.005em', fontWeight: '600' }], 'display-hero': ['56px', { lineHeight: '64px', letterSpacing: '-0.03em', fontWeight: '800' }], 'label-caption': ['11px', { lineHeight: '14px', letterSpacing: '0.02em', fontWeight: '500' }], 'label-badge': ['12px', { lineHeight: '16px', letterSpacing: '0.01em', fontWeight: '600' }], 'headline-xl': ['32px', { lineHeight: '40px', letterSpacing: '-0.02em', fontWeight: '700' }], 'body-md': ['15px', { lineHeight: '24px', fontWeight: '400' }], 'body-sm': ['13px', { lineHeight: '20px', fontWeight: '400' }], 'label-mono-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.02em', fontWeight: '500' }] } } } };</script><style>@layer base{html,body{width:100vw;min-height:100vh;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-sm flex items-center justify-between gap-space-sm"><div class="flex items-center min-w-0 flex-1"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface hover:text-primary-container hover:bg-surface-container-low transition-colors active:scale-95 shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex flex-col min-w-0 ml-1"><span class="font-label-caption text-label-caption text-text-tertiary uppercase tracking-wider truncate">Akademik</span><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate">Revision Screen</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Quick Action" class="w-11 h-11 flex items-center justify-center rounded-xl text-primary-container bg-surface-container-low hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-[20px]">tune</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-36">
+<!-- Status Context Bar -->
+<section class="px-margin-mobile pt-3 pb-2 flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[18px] text-status-revision" style="font-variation-settings: 'FILL' 1;">assignment_late</span>
+<span class="font-label-badge text-label-badge text-text-secondary truncate">Ref: TA-2024-TI-089</span>
+</div>
+<div class="flex items-center gap-1.5 bg-[#FFF7ED] px-2.5 py-1 rounded-full shrink-0 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-status-revision animate-ping"></span>
+<span class="font-label-badge text-label-badge text-[#EA580C] uppercase tracking-wider font-bold">Perlu Revisi</span>
+</div>
+</section>
+<div class="px-margin-mobile flex flex-col gap-4">
+<!-- 1. Curator Highlight Card (Warm Amber/Tangerine Tone) -->
+<section class="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#FFFBEB] via-[#FEF3C7]/40 to-[#FFF7ED] p-4 shadow-sm">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-[#F59E0B]/10 rounded-full blur-xl pointer-events-none"></div>
+<!-- Curator Info & Deadline Row -->
+<div class="flex items-start justify-between gap-2 pb-3.5">
+<div class="flex items-center gap-3 min-w-0">
+<div class="relative shrink-0">
+<img class="w-11 h-11 rounded-full object-cover shadow-sm" data-alt="Close up professional portrait of Drs. Supriyadi, an experienced Indonesian academic librarian wearing batik and glasses, warm institutional office lighting, crisp professional photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxX3UtpB-7DQ7SOFSkkIji_-8IHWSOXpVKHQNEcloA21mbjK_yc6L4J-cTroGJ86yNRpG0SoFAIPV_0W6FLt-JjNyhrkA4boRFy-Yri8IO7dKfmDaUL0O6pdw0rURBIh7SA4X5gYQaCdcdNksCW8pPHrs-dGmepBGLanfuYnLjMpcGmE3VrAb3X_8d9nPe0AUUkGe4y3Wm6mgylxBGmS8cUlYyg28m7tgEopUQLmY"/>
+<div class="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-primary text-on-primary rounded-full flex items-center justify-center text-[10px] shadow-sm">
+<span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-text-primary truncate">Drs. Supriyadi, M.Lib</span>
+</div>
+<span class="font-label-caption text-label-caption text-text-secondary truncate">Staf Kurator UPT Perpustakaan</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-[#FDE68A]/60 px-2.5 py-1 rounded-full shrink-0">
+<span class="material-symbols-outlined text-[13px] text-[#B45309]">schedule</span>
+<span class="font-label-badge text-label-badge text-[#B45309] font-bold">8 Hari Lagi</span>
+</div>
+</div>
+<!-- Curatorial Feedback Notes -->
+<div class="bg-surface-card/90 backdrop-blur-sm rounded-xl p-3.5 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-label-caption text-label-caption uppercase tracking-wider text-[#92400E] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">edit_note</span>
+            Catatan Resmi Kurator
+          </span>
+<span class="font-label-mono-sm text-label-mono-sm text-text-tertiary">14 Okt • 09:42</span>
+</div>
+<div class="flex flex-col gap-2 text-text-primary font-body-sm text-body-sm">
+<div class="flex items-start gap-2 bg-[#FFFBEB]/80 p-2 rounded-lg">
+<span class="w-4 h-4 rounded-full bg-[#F59E0B] text-surface-card flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">1</span>
+<p class="leading-snug"><span class="font-semibold text-text-primary">Lembar Pengesahan:</span> Lampirkan lembar pengesahan TTE Dekan yang ber-barcode resmi pada halaman 2 naskah utama.</p>
+</div>
+<div class="flex items-start gap-2 bg-[#FFFBEB]/80 p-2 rounded-lg">
+<span class="w-4 h-4 rounded-full bg-[#F59E0B] text-surface-card flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">2</span>
+<p class="leading-snug"><span class="font-semibold text-text-primary">Format Abstrak:</span> Sesuaikan format abstrak bahasa Inggris dengan standar IEEE thesaurus (minimal 150 kata padat).</p>
+</div>
+<div class="flex items-start gap-2 bg-[#FFFBEB]/80 p-2 rounded-lg">
+<span class="w-4 h-4 rounded-full bg-[#F59E0B] text-surface-card flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">3</span>
+<p class="leading-snug"><span class="font-semibold text-text-primary">Kata Kunci:</span> Persingkat kata kunci menjadi 4-5 frasa spesifik berbasis indexing internasional.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Interactive Self-Correction Checklist (FR-18 Pre-submission validation) -->
+<section class="rounded-xl bg-surface-card p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[17px]">task_alt</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Verifikasi Mandiri Penulis</h2>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm px-2 py-0.5 bg-surface-container-high rounded-full text-text-secondary font-bold" id="checklist-counter">2/3 Selesai</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary leading-snug">Centang butir perbaikan sebelum mengajukan penyerahan kembali ke tim kurasi repositori.</p>
+<div class="flex flex-col gap-2 pt-1" id="checklist-container">
+<!-- Item 1 -->
+<label class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low cursor-pointer transition-all active:scale-[0.99] select-none">
+<input checked="" class="revision-check mt-0.5 w-4 h-4 rounded text-primary focus:ring-0 accent-primary cursor-pointer" type="checkbox"/>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-headline-sm text-[14px] text-text-primary leading-tight font-medium">Lembar pengesahan TTE Dekan diperbarui</span>
+<span class="font-label-caption text-label-caption text-text-tertiary mt-0.5">Barcode tervalidasi di halaman 2 PDF</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-status-published" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</label>
+<!-- Item 2 -->
+<label class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low cursor-pointer transition-all active:scale-[0.99] select-none">
+<input checked="" class="revision-check mt-0.5 w-4 h-4 rounded text-primary focus:ring-0 accent-primary cursor-pointer" type="checkbox"/>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-headline-sm text-[14px] text-text-primary leading-tight font-medium">Perbaikan abstrak dwibahasa</span>
+<span class="font-label-caption text-label-caption text-text-tertiary mt-0.5">Sudah disesuaikan 165 kata standar IEEE</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-status-published" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</label>
+<!-- Item 3 -->
+<label class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low cursor-pointer transition-all active:scale-[0.99] select-none">
+<input class="revision-check mt-0.5 w-4 h-4 rounded text-primary focus:ring-0 accent-primary cursor-pointer" type="checkbox"/>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-headline-sm text-[14px] text-text-primary leading-tight font-medium">Penyesuaian kata kunci IEEE</span>
+<span class="font-label-caption text-label-caption text-status-revision mt-0.5">Belum dicentang: pastikan 4-5 term</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-text-tertiary">radio_button_unchecked</span>
+</label>
+</div>
+</section>
+<!-- 3. Version History & Document Comparison Section -->
+<section class="rounded-xl bg-surface-card p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Dokumen &amp; Berkas Revisi</h2>
+</div>
+<button class="font-label-badge text-label-badge text-primary-container font-semibold flex items-center gap-0.5 py-1 px-2 rounded-lg hover:bg-surface-container-low transition-colors" id="toggle-history-btn">
+<span>Riwayat (1)</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-200" id="history-arrow">expand_more</span>
+</button>
+</div>
+<!-- Collapsible History Card: Versi 1.0 (Ditolak Revisi) -->
+<div class="hidden flex-col gap-2 rounded-xl bg-surface-canvas p-3 transition-all" id="history-collapsible">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge text-text-secondary font-bold">Naskah Pengajuan Awal</span>
+<span class="font-label-caption text-label-caption bg-[#FEE2E2] text-status-rejected font-bold px-2 py-0.5 rounded-full">Revisi Diberikan</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-[#FEE2E2]/60 flex items-center justify-center text-status-rejected shrink-0">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-text-primary truncate">Skripsi_Final_V1.0_Amanda.pdf</span>
+<span class="font-label-caption text-label-caption text-text-tertiary">Versi 1.0 • 6.4 MB • 10 Okt 2024</span>
+</div>
+</div>
+<button aria-label="Lihat Naskah Versi 1.0" class="w-8 h-8 rounded-lg bg-surface-card flex items-center justify-center text-text-secondary hover:text-primary transition-colors shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Current Replacement Dropzone / Newly Uploaded File (Versi 1.1) -->
+<div class="flex flex-col gap-2">
+<span class="font-label-caption text-label-caption uppercase tracking-wider text-text-tertiary font-bold">Naskah Pengganti (Versi 1.1)</span>
+<!-- Active File Card -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-3.5 flex flex-col gap-2.5 shadow-sm">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[22px]">description</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-[14px] text-text-primary font-bold truncate">Skripsi_Final_Rev1.1_Amanda.pdf</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-mono-sm text-label-mono-sm text-text-secondary">6.8 MB</span>
+<span class="w-1 h-1 rounded-full bg-text-tertiary"></span>
+<span class="font-label-caption text-label-caption text-status-published font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">check</span> Siap Kirim
+                  </span>
+</div>
+</div>
+</div>
+<span class="font-label-badge text-label-badge bg-[#ECFDF5] text-[#059669] font-bold px-2 py-1 rounded-full shrink-0">Baru Diunggah</span>
+</div>
+<!-- Document Meta Strip -->
+<div class="flex items-center justify-between pt-1 font-label-caption text-label-caption text-text-tertiary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary">verified_user</span> TTE Dekan Terverifikasi
+            </span>
+<div class="flex items-center gap-1 text-primary cursor-pointer hover:underline">
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+<span>Pratinjau PDF</span>
+</div>
+</div>
+</div>
+<!-- File Replacement Trigger Button -->
+<button class="w-full py-2.5 px-3 rounded-xl bg-surface-canvas hover:bg-surface-container transition-all flex items-center justify-center gap-2 text-text-secondary active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px] text-primary">sync</span>
+<span class="font-headline-sm text-[13px] font-semibold text-text-primary">Ganti dengan Berkas PDF Lain</span>
+</button>
+</div>
+</section>
+<!-- 4. Author's Response Note to Curator -->
+<section class="rounded-xl bg-surface-card p-4 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<label class="font-headline-sm text-headline-sm text-text-primary flex items-center gap-2" for="author-response">
+<span class="material-symbols-outlined text-primary text-[18px]">chat_bubble_outline</span>
+          Tanggapan untuk Kurator
+        </label>
+<span class="font-label-caption text-label-caption text-text-tertiary">Maks. 500 kata</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary leading-snug">Jelaskan secara ringkas bagian yang telah Anda sesuaikan agar mempermudah validasi kurator.</p>
+<div class="relative">
+<textarea class="w-full bg-surface-canvas rounded-xl p-3 font-body-sm text-body-sm text-text-primary focus:outline-none focus:bg-surface-card shadow-inner transition-colors resize-none" id="author-response" rows="4">Yth. Pak Supriyadi, lembar pengesahan dekanat ber-barcode telah disisipkan pada lembar kedua naskah dan abstrak bahasa Inggris telah direvisi sesuai pedoman IEEE thesaurus dengan total 165 kata.</textarea>
+</div>
+<div class="flex items-center justify-between text-text-tertiary font-label-caption text-label-caption">
+<span class="flex items-center gap-1 text-[#059669]">
+<span class="material-symbols-outlined text-[13px]">cloud_done</span> Draf pesan tersimpan
+        </span>
+<span id="char-counter">184 karakter</span>
+</div>
+</section>
+<!-- Context Support Note -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">info</span>
+<p class="font-body-sm text-[12px] leading-relaxed text-text-secondary">Setelah dikirim ulang, kurator akan memeriksa naskah dalam 1-3 hari kerja. Notifikasi hasil kurasi akan dikirim melalui email kampus &amp; dashboard ini.</p>
+</div>
+</div>
+<!-- 5. Sticky Bottom Action Bar -->
+<aside class="fixed bottom-0 left-0 right-0 z-40 bg-surface-card/95 backdrop-blur-xl shadow-[0_-4px_24px_rgba(15,23,42,0.08)] pb-safe">
+<div class="max-w-md mx-auto px-margin-mobile py-3 flex flex-col gap-2">
+<!-- Confirmation Notice Banner -->
+<div class="flex items-center justify-between px-1">
+<span class="font-label-caption text-label-caption text-text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-published"></span> Berkas &amp; catatan siap diajukan
+        </span>
+<span class="font-label-mono-sm text-label-mono-sm text-text-tertiary">FR-18 Submission</span>
+</div>
+<div class="grid grid-cols-12 gap-2">
+<!-- Secondary Action: Save Draft -->
+<button aria-label="Simpan Perubahan Sementara" class="col-span-4 py-3 px-2 rounded-xl bg-surface-container-low hover:bg-surface-container active:scale-95 transition-all flex items-center justify-center gap-1.5 text-text-primary" id="btn-save-draft">
+<span class="material-symbols-outlined text-[17px] text-text-secondary">bookmark_border</span>
+<span class="font-headline-sm text-[13px] font-semibold truncate">Draf</span>
+</button>
+<!-- Primary Action: Submit Revision -->
+<button aria-label="Kirim Ulang Revisi ke Kurator" class="col-span-8 py-3 px-3 rounded-xl bg-gradient-to-r from-status-revision to-[#EA580C] hover:opacity-95 text-on-primary active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-md shadow-orange-500/20" id="btn-submit-revision">
+<span class="material-symbols-outlined text-[19px]">send</span>
+<span class="font-headline-sm text-[14px] font-bold tracking-tight">Kirim Ulang Revisi</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Interactive Submission Success Modal Sheet (Hidden by default) -->
+<div class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm hidden items-end justify-center transition-opacity" id="submission-dialog">
+<div class="w-full max-w-md bg-surface-card rounded-t-2xl p-6 flex flex-col items-center text-center gap-3 shadow-2xl animate-in slide-in-from-bottom duration-300">
+<div class="w-14 h-14 rounded-full bg-[#ECFDF5] text-status-published flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-text-primary">Naskah Dikirim Ulang!</h3>
+<p class="font-body-md text-body-md text-text-secondary">Revisi Versi 1.1 dan tanggapan Anda telah berhasil diserahkan ke <strong>Drs. Supriyadi, M.Lib</strong> untuk peninjauan tahap dua.</p>
+<div class="w-full bg-surface-container-low p-3 rounded-xl flex items-center justify-between text-left mt-2">
+<div>
+<p class="font-label-badge text-label-badge text-text-primary font-bold">Estimasi Selesai Kurasi</p>
+<p class="font-label-caption text-label-caption text-text-secondary">Rabu, 18 Oktober 2024</p>
+</div>
+<span class="font-label-badge text-label-badge bg-status-published/15 text-status-published font-bold px-2 py-1 rounded-full">Antrean #04</span>
+</div>
+<button class="w-full mt-2 py-3 rounded-xl bg-primary-container text-on-primary font-headline-sm text-headline-sm font-semibold active:scale-95 transition-all" id="btn-close-dialog">
+        Kembali ke Beranda Repositori
+      </button>
+</div>
+</div>
+</div>
+<script>
+  (function initRevisionCuratorModule() {
+    // 1. Collapsible History
+    const historyBtn = document.getElementById('toggle-history-btn');
+    const historyPanel = document.getElementById('history-collapsible');
+    const historyArrow = document.getElementById('history-arrow');
+
+    if (historyBtn && historyPanel && historyArrow) {
+      historyBtn.addEventListener('click', () => {
+        const isHidden = historyPanel.classList.contains('hidden');
+        if (isHidden) {
+          historyPanel.classList.remove('hidden');
+          historyPanel.classList.add('flex');
+          historyArrow.style.transform = 'rotate(180deg)';
+        } else {
+          historyPanel.classList.add('hidden');
+          historyPanel.classList.remove('flex');
+          historyArrow.style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+
+    // 2. Checklist dynamic count
+    const checkboxes = document.querySelectorAll('.revision-check');
+    const counterBadge = document.getElementById('checklist-counter');
+
+    function updateChecklist() {
+      let checkedCount = 0;
+      checkboxes.forEach(cb => {
+        if (cb.checked) checkedCount++;
+      });
+      if (counterBadge) {
+        counterBadge.innerText = `${checkedCount}/${checkboxes.length} Selesai`;
+        if (checkedCount === checkboxes.length) {
+          counterBadge.className = 'font-label-mono-sm text-label-mono-sm px-2 py-0.5 bg-[#ECFDF5] rounded-full text-[#059669] font-bold';
+        } else {
+          counterBadge.className = 'font-label-mono-sm text-label-mono-sm px-2 py-0.5 bg-surface-container-high rounded-full text-text-secondary font-bold';
+        }
+      }
+    }
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', () => {
+        const icon = cb.parentElement.querySelector('.material-symbols-outlined');
+        if (icon) {
+          if (cb.checked) {
+            icon.textContent = 'check_circle';
+            icon.className = 'material-symbols-outlined text-[18px] text-status-published';
+            icon.style.fontVariationSettings = "'FILL' 1";
+          } else {
+            icon.textContent = 'radio_button_unchecked';
+            icon.className = 'material-symbols-outlined text-[18px] text-text-tertiary';
+            icon.style.fontVariationSettings = "'FILL' 0";
+          }
+        }
+        updateChecklist();
+      });
+    });
+
+    // 3. Dynamic character counter
+    const textarea = document.getElementById('author-response');
+    const charCounter = document.getElementById('char-counter');
+    if (textarea && charCounter) {
+      textarea.addEventListener('input', () => {
+        charCounter.innerText = `${textarea.value.length} karakter`;
+      });
+    }
+
+    // 4. Modal Interactions
+    const submitBtn = document.getElementById('btn-submit-revision');
+    const saveDraftBtn = document.getElementById('btn-save-draft');
+    const dialog = document.getElementById('submission-dialog');
+    const closeDialogBtn = document.getElementById('btn-close-dialog');
+
+    if (submitBtn && dialog) {
+      submitBtn.addEventListener('click', () => {
+        dialog.classList.remove('hidden');
+        dialog.classList.add('flex');
+      });
+    }
+
+    if (closeDialogBtn && dialog) {
+      closeDialogBtn.addEventListener('click', () => {
+        dialog.classList.add('hidden');
+        dialog.classList.remove('flex');
+      });
+    }
+
+    if (saveDraftBtn) {
+      saveDraftBtn.addEventListener('click', () => {
+        const originalText = saveDraftBtn.innerHTML;
+        saveDraftBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[17px] text-[#059669]">check</span>
+          <span class="font-headline-sm text-[13px] font-semibold text-[#059669]">Tersimpan</span>
+        `;
+        setTimeout(() => {
+          saveDraftBtn.innerHTML = originalText;
+        }, 1800);
+      });
+    }
+  })();
+</script></main></body></html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;font-family:'Plus Jakarta Sans',sans-serif;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-lowest":"#ffffff","on-secondary":"#ffffff","primary-fixed-dim":"#b3c5ff","primary":"#0050cb","surface-muted":"#F1F5F9","surface-dim":"#cbdbf5","on-tertiary":"#ffffff","on-error":"#ffffff","outline":"#727687","on-secondary-fixed":"#001e2b","accent-glow":"rgba(0, 102, 255, 0.12)","surface-bright":"#f8f9ff","surface-card":"#FFFFFF","status-submitted":"#0284C7","surface-container-low":"#eff4ff","text-secondary":"#475569","status-draft":"#64748B","on-tertiary-fixed":"#100069","surface-container":"#e5eeff","background":"#f8f9ff","secondary-fixed-dim":"#75d1ff","text-primary":"#0F172A","status-published":"#10B981","surface-tint":"#0054d6","on-error-container":"#93000a","on-primary-container":"#f8f7ff","text-tertiary":"#94A3B8","on-tertiary-container":"#faf6ff","inverse-primary":"#b3c5ff","error-container":"#ffdad6","on-secondary-container":"#004b65","tertiary-container":"#655dec","on-primary":"#ffffff","tertiary-fixed":"#e3dfff","primary-fixed":"#dae1ff","secondary-container":"#00c1fd","surface-container-highest":"#d3e4fe","on-surface":"#0b1c30","tertiary":"#4b41d2","on-background":"#0b1c30","error":"#ba1a1a","surface-canvas":"#F8FAFC","on-secondary-fixed-variant":"#004d67","surface":"#f8f9ff","surface-variant":"#d3e4fe","on-primary-fixed-variant":"#003fa4","tertiary-fixed-dim":"#c3c0ff","surface-container-high":"#dce9ff","status-revision":"#F97316","on-surface-variant":"#424656","inverse-surface":"#213145","status-rejected":"#EF4444","outline-variant":"#c2c6d8","on-tertiary-fixed-variant":"#372abf","status-review":"#EAB308","border-subtle":"#E2E8F0","on-primary-fixed":"#001849","secondary":"#006688","secondary-fixed":"#c2e8ff","primary-container":"#0066ff","inverse-on-surface":"#eaf1ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin":"2rem","margin-mobile":"1rem","space-lg":"1.5rem","space-md":"1rem","space-sm":"0.5rem","gutter":"1.5rem","space-xl":"2.5rem","gutter-mobile":"1rem","space-xs":"0.25rem"},"fontFamily":{"body-sm":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-mono-sm":["JetBrains Mono"],"headline-xl":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-caption":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-badge":["Plus Jakarta Sans"]},"fontSize":{"body-sm":["13px",{"lineHeight":"20px","fontWeight":"400"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"800"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"label-mono-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"800"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"label-caption":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-xl-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-badge":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"600"}]}}}};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-xl bg-primary-container flex items-center justify-center shadow-[0_4px_14px_rgba(0,102,255,0.25)]"><span class="material-symbols-outlined text-on-primary text-[20px]">school</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight tracking-tight">Immortal Campus</span><span class="font-label-caption text-label-caption text-text-tertiary">Academic Repository</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifikasi" class="relative w-11 h-11 flex items-center justify-center rounded-xl text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[24px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><button aria-label="Ganti Peran atau Profil" class="flex items-center gap-space-xs pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></button></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-gutter-mobile gap-space-md">
+<!-- Author Greeting & Identity Bento Card -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-md shadow-md mt-space-sm">
+<div class="absolute -right-10 -bottom-10 w-36 h-36 rounded-full bg-primary/5 pointer-events-none"></div>
+<div class="flex items-start justify-between relative z-10 gap-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<div class="w-13 h-13 w-12 h-12 rounded-xl overflow-hidden bg-surface-container flex items-center justify-center shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A candid, warm, studio portrait of a bright Southeast Asian young adult female university student wearing modern academic casual attire with soft rim lighting and a vibrant sapphire blue accent blur in the backdrop, sharp photography, confident and cheerful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi7PMWOP4-p0or5zV9S5S6aNiOvGSutepkzBwcBLAmzDEEBSSAzAd7uxwG-RmbiMhsO4dDylC-0ETMqXkHoybAEslu8Pez2YkafZfU6VnaVoxI0mzgpoGSKzu1Ur8McYRdtLZaGZhVIRKGsuY3Aq7qaeNeOV4Iv6tMtyeA35HfO1HLBwzv9m4bdfor9uga2nt48sjBH4jyRGdXkkLHbAVi66n9_eVmL_PAIWDvu4k"/>
+</div>
+<span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-status-published ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h1 class="font-headline-sm text-headline-sm text-text-primary truncate">Amanda Putri W.</h1>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low text-primary font-label-badge text-label-badge font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              Penulis Aktif
+            </span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-text-secondary truncate">NIM 21051204</span>
+<span class="font-body-sm text-body-sm text-text-tertiary truncate">S1 Teknik Informatika</span>
+</div>
+</div>
+<button aria-label="Pengaturan Profil Naskah" class="w-9 h-9 rounded-lg bg-surface-muted flex items-center justify-center text-text-secondary shrink-0 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</button>
+</div>
+<!-- Impact Mini Strip -->
+<div class="mt-space-md pt-space-sm flex items-center justify-between bg-surface-canvas rounded-lg px-space-sm py-2">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caption text-label-caption text-text-tertiary">Jangkauan Akademik</span>
+<span class="font-headline-sm text-headline-sm text-text-primary leading-none">1.729 <span class="font-body-sm text-body-sm text-text-secondary font-normal">Unduhan</span></span>
+</div>
+</div>
+<!-- Mini Sparkline SVG -->
+<div class="flex items-center gap-1">
+<svg class="w-20 h-6 text-primary" fill="none" stroke="currentColor" viewbox="0 0 80 24">
+<path d="M2 18L18 15L32 19L46 9L60 12L78 3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<path d="M2 18L18 15L32 19L46 9L60 12L78 3V24H2Z" fill="url(#sparkline-grad)" opacity="0.15"></path>
+<defs>
+<lineargradient id="sparkline-grad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#0066FF"></stop>
+<stop offset="100%" stop-color="#0066FF" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<span class="font-label-caption text-label-caption text-status-published font-semibold">+18%</span>
+</div>
+</div>
+</div>
+<!-- Primary Floating CTA Section -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary-container to-primary p-space-md text-on-primary shadow-xl">
+<div class="absolute -right-6 -top-6 w-28 h-28 rounded-full bg-white/10 blur-xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-xs relative z-10">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-on-primary font-label-badge text-label-badge">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+          Jalur Sidang 2024
+        </span>
+<span class="font-label-caption text-label-caption text-white/80">3 Langkah Mudah</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-primary font-bold tracking-tight mt-1">Siap Mengabadikan Risetmu?</h2>
+<p class="font-body-sm text-body-sm text-white/90">Unggah draf skripsi final, peroleh DOI permanen, dan verifikasi perpustakaan dalam 2x24 jam.</p>
+<button class="mt-space-xs w-full py-3 px-space-md rounded-xl bg-surface-container-lowest text-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-2 shadow-md hover:bg-surface-bright active:scale-[0.99] transition-all">
+<span class="material-symbols-outlined text-[20px]">upload_file</span>
+        + Unggah Naskah Baru (PDF)
+      </button>
+</div>
+</div>
+<!-- Action Required: Urgent Revision Alert Card -->
+<div class="relative overflow-hidden rounded-xl bg-amber-50/90 p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-status-revision/15 flex items-center justify-center text-status-revision shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex flex-col gap-1 min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold">1 Naskah Memerlukan Perbaikan</span>
+<span class="px-2 py-0.5 rounded-full bg-status-revision/10 text-status-revision font-label-badge text-label-badge font-semibold">Prioritas</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary leading-snug">
+<strong class="text-text-primary">Catatan Kurator:</strong> "Perbaiki lembar pengesahan TTE Dekan dan sesuaikan kata kunci IEEE."
+        </p>
+<button class="mt-2 inline-flex items-center justify-center gap-1.5 py-2 px-space-md rounded-lg bg-status-revision text-surface-container-lowest font-headline-sm text-headline-sm font-medium shadow-sm hover:opacity-95 active:scale-[0.99] transition-all">
+<span>Lihat Catatan &amp; Unggah Revisi</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Status Filter Tracker (Horizontal Tabs) -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">Daftar Pengajuan Saya</h3>
+<span class="font-label-caption text-label-caption text-text-tertiary">Semester Genap 2023/2024</span>
+</div>
+<!-- Filter Pills Strip -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar -mx-gutter-mobile px-gutter-mobile">
+<button class="px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-badge text-label-badge font-medium whitespace-nowrap shadow-sm">
+        Semua (3)
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-text-secondary hover:text-text-primary font-label-badge text-label-badge font-medium whitespace-nowrap shadow-sm flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-status-revision"></span>
+        Perlu Revisi (1)
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-text-secondary hover:text-text-primary font-label-badge text-label-badge font-medium whitespace-nowrap shadow-sm flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-status-submitted"></span>
+        Dalam Review (1)
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-text-secondary hover:text-text-primary font-label-badge text-label-badge font-medium whitespace-nowrap shadow-sm flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-status-published"></span>
+        Diterbitkan (1)
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-text-tertiary font-label-badge text-label-badge font-medium whitespace-nowrap shadow-sm opacity-60">
+        Draf (0)
+      </button>
+</div>
+</div>
+<!-- Repository Submissions Feed -->
+<div class="flex flex-col gap-space-sm">
+<!-- Card 1: Perlu Revisi -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest p-space-md shadow-md transition-transform duration-200">
+<div class="flex items-start justify-between gap-space-xs mb-2">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2.5 py-0.5 rounded-full bg-orange-100 text-status-revision font-label-badge text-label-badge font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">sync_problem</span>
+            Perlu Revisi
+          </span>
+<span class="font-label-mono-sm text-label-mono-sm text-text-tertiary">Skripsi • v1.1</span>
+</div>
+<span class="font-label-caption text-label-caption text-status-revision font-semibold bg-orange-50 px-2 py-0.5 rounded-md">
+          8 Hari Lagi
+        </span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary font-bold line-clamp-2 leading-snug">
+        Rancang Bangun Sistem Etalase Digital Berbasis Web Service
+      </h4>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mt-1">
+        Implementasi arsitektur microservices untuk repositori digital berskala kampus dengan otentikasi SSO OAuth2 dan enkripsi data naskah mahasiswa.
+      </p>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs text-text-tertiary">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1 font-label-caption text-label-caption">
+<span class="material-symbols-outlined text-[15px]">picture_as_pdf</span>
+            4.2 MB
+          </span>
+<span class="inline-flex items-center gap-1 font-label-caption text-label-caption">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+            Diperbarui kemarin
+          </span>
+</div>
+</div>
+<!-- Quick Action Buttons -->
+<div class="grid grid-cols-2 gap-space-xs mt-space-sm pt-space-xs">
+<button class="py-2.5 px-space-xs rounded-xl bg-surface-muted text-text-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-1.5 hover:bg-surface-container active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+          Riwayat Catatan
+        </button>
+<button class="py-2.5 px-space-xs rounded-xl bg-primary text-on-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-1.5 shadow-sm hover:opacity-95 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[18px]">edit_document</span>
+          Edit Naskah
+        </button>
+</div>
+</div>
+<!-- Card 2: Dalam Review -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest p-space-md shadow-md transition-transform duration-200">
+<div class="flex items-start justify-between gap-space-xs mb-2">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2.5 py-0.5 rounded-full bg-sky-100 text-status-submitted font-label-badge text-label-badge font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] animate-spin">progress_activity</span>
+            Dalam Review
+          </span>
+<span class="font-label-mono-sm text-label-mono-sm text-text-tertiary">Artikel Jurnal</span>
+</div>
+<span class="font-label-caption text-label-caption text-status-submitted font-semibold bg-sky-50 px-2 py-0.5 rounded-md">
+          Posisi Antrean: #4
+        </span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary font-bold line-clamp-2 leading-snug">
+        Komparasi Kinerja Algoritma Enkripsi AES-256 dan RSA pada Distribusi File PDF
+      </h4>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mt-1">
+        Pengujian komparatif throughput dan latency kriptografi hybrid untuk pengamanan berkas repositori akademik dari modifikasi ilegal.
+      </p>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs">
+<div class="flex items-center gap-1 font-label-caption text-label-caption text-text-tertiary">
+<span class="material-symbols-outlined text-[15px]">event</span>
+          Diajukan 3 hari lalu
+        </div>
+<div class="flex items-center gap-1 font-label-caption text-label-caption text-text-secondary">
+<span class="material-symbols-outlined text-[15px] text-status-submitted">hourglass_top</span>
+          Estimasi: 2 hari
+        </div>
+</div>
+<!-- Action Row -->
+<div class="mt-space-sm pt-space-xs">
+<button class="w-full py-2.5 px-space-md rounded-xl bg-surface-canvas text-text-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-1.5 hover:bg-surface-muted transition-colors">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+          Lihat Berkas &amp; Tracker Kurasi
+        </button>
+</div>
+</div>
+<!-- Card 3: Diterbitkan -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest p-space-md shadow-md transition-transform duration-200">
+<div class="flex items-start justify-between gap-space-xs mb-2">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-status-published font-label-badge text-label-badge font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            Diterbitkan
+          </span>
+<span class="font-label-mono-sm text-label-mono-sm text-text-tertiary">Prosiding Konferensi</span>
+</div>
+<span class="font-label-caption text-label-caption text-status-published font-semibold bg-emerald-50 px-2 py-0.5 rounded-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">file_download</span>
+          489 Unduhan
+        </span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary font-bold line-clamp-2 leading-snug">
+        Analisis Keamanan Jaringan Kampus Menggunakan Snort IDS
+      </h4>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mt-1">
+        Pendeteksian intrusi berbasis signature pada server aplikasi perpustakaan kampus terpadu dengan integrasi bot alerting Telegram.
+      </p>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs">
+<div class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-primary font-medium">
+<span class="material-symbols-outlined text-[15px]">link</span>
+          doi:10.1145/campus.2024.089
+        </div>
+<span class="font-label-caption text-label-caption text-text-tertiary">
+          Terbit 12 Jan 2024
+        </span>
+</div>
+<!-- Action Row -->
+<div class="grid grid-cols-2 gap-space-xs mt-space-sm pt-space-xs">
+<button class="py-2.5 px-space-xs rounded-xl bg-surface-muted text-text-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-1.5 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">share</span>
+          Bagikan
+        </button>
+<button class="py-2.5 px-space-xs rounded-xl bg-surface-canvas text-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-1.5 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">analytics</span>
+          Metrik Detail
+        </button>
+</div>
+</div>
+</div>
+<!-- Bottom Visual Quote & Delight Nugget -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-md flex items-center gap-space-sm mb-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">lightbulb</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-text-primary font-semibold">Kiat Kurasi Cepat</span>
+<p class="font-body-sm text-body-sm text-text-secondary leading-snug">Pastikan abstrak memiliki 200–250 kata dan kata kunci sesuai thesaurus IEEE untuk percepatan tinjauan tim kurator.</p>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive filter button toggle micro-state
+  document.querySelectorAll('.no-scrollbar button').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.no-scrollbar button').forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary');
+        b.classList.add('bg-surface-container-lowest', 'text-text-secondary');
+      });
+      this.classList.remove('bg-surface-container-lowest', 'text-text-secondary', 'text-text-tertiary');
+      this.classList.add('bg-primary', 'text-on-primary');
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(15,23,42,0.05)]" data-active-classes="text-primary font-semibold"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] text-text-secondary transition-colors" data-path="jelajah" href="#"><span class="material-symbols-outlined text-[24px]">explore</span><span class="font-label-caption text-label-caption">Jelajah</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] transition-colors text-primary font-semibold" data-path="karya-saya" href="#"><span class="material-symbols-outlined text-[24px]">menu_book</span><span class="font-label-caption text-label-caption">Karya Saya</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] text-text-secondary transition-colors relative" data-path="panel-kurasi" href="#"><div class="relative"><span class="material-symbols-outlined text-[24px]">verified_user</span><span class="absolute -top-0.5 -right-1 w-2 h-2 rounded-full bg-status-review"></span></div><span class="font-label-caption text-label-caption">Kurasi</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] text-text-secondary transition-colors" data-path="profil" href="#"><span class="material-symbols-outlined text-[24px]">person</span><span class="font-label-caption text-label-caption">Profil</span></a></div></nav></body></html>

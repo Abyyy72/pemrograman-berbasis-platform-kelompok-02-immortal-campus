@@ -37,3 +37,15 @@ yarn-error.log*
 .vscode/
 .idea/
 
+# Flutter / Android sensitive
+android/local.properties
+android/key.properties
+*.jks
+*.keystore
+**/android/app/google-services.json
+**/ios/Runner/GoogleService-Info.plist
+
+# Stitch design screenshots (large binary files, excluded from repo)
+stitch/mobile/*.png
+stitch/web/*.png
+
